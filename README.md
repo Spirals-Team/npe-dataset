@@ -14,6 +14,7 @@
 | Apache Commons Math        | MATH-988b       | 1488866 |
 | Apache Commons Math        | MATH-1115       | 1590254 |
 | Apache Commons Math        | MATH-1117       | 1590251 |
+| Apache FELIX               | FELIX-4960      | 1691137 |
 | Apache PDFBox              | PDFBOX-2812     | 1681643 |
 | Apache PDFBox              | PDFBOX-2965     | 1701905 |
 | Apache PDFBox              | PDFBOX-2995     | 1705415 |
