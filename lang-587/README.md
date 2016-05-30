@@ -1,9 +1,12 @@
-Exception:
+# Lang 587
 
-    testToClass_object(org.apache.commons.lang3.ClassUtilsTest)  Time elapsed: 0.016 sec  <<< ERROR!
-    java.lang.NullPointerException: null
-            at org.apache.commons.lang3.ClassUtils.toClass(ClassUtils.java:910)
-            at org.apache.commons.lang3.ClassUtilsTest.testToClass_object(ClassUtilsTest.java:901)
+Exception:
+```java
+testToClass_object(org.apache.commons.lang3.ClassUtilsTest)  Time elapsed: 0.016 sec  <<< ERROR!
+java.lang.NullPointerException: null
+        at org.apache.commons.lang3.ClassUtils.toClass(ClassUtils.java:910)
+        at org.apache.commons.lang3.ClassUtilsTest.testToClass_object(ClassUtilsTest.java:901)
+```
 
 Fix Commit: [SVN Revision 907102](http://svn.apache.org/viewvc?view=revision&revision=907102)
 

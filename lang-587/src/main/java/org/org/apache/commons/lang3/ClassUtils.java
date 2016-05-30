@@ -167,7 +167,7 @@ public class ClassUtils {
      */
     public static String getShortClassName(Class<?> cls) {
         if (cls == null) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
         return getShortClassName(cls.getName());
     }
@@ -182,10 +182,10 @@ public class ClassUtils {
      */
     public static String getShortClassName(String className) {
         if (className == null) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
         if (className.length() == 0) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
 
         StringBuilder arrayPrefix = new StringBuilder();
@@ -240,7 +240,7 @@ public class ClassUtils {
      */
     public static String getPackageName(Class<?> cls) {
         if (cls == null) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
         return getPackageName(cls.getName());
     }
@@ -256,7 +256,7 @@ public class ClassUtils {
      */
     public static String getPackageName(String className) {
         if (className == null || className.length() == 0) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
 
         // Strip array encoding
@@ -270,7 +270,7 @@ public class ClassUtils {
 
         int i = className.lastIndexOf(PACKAGE_SEPARATOR_CHAR);
         if (i == -1) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
         return className.substring(0, i);
     }
@@ -436,7 +436,8 @@ public class ClassUtils {
      * @return <code>true</code> if assignment possible
      */
     public static boolean isAssignable(Class<?>[] classArray, Class<?>[] toClassArray) {
-        return isAssignable(classArray, toClassArray, SystemUtils.isJavaVersionAtLeast(1.5f));
+        return isAssignable(classArray, toClassArray, org.apache.commons.lang3.SystemUtils
+                .isJavaVersionAtLeast(1.5f));
     }
 
     /**
@@ -472,14 +473,15 @@ public class ClassUtils {
      * @return <code>true</code> if assignment possible
      */
     public static boolean isAssignable(Class<?>[] classArray, Class<?>[] toClassArray, boolean autoboxing) {
-        if (ArrayUtils.isSameLength(classArray, toClassArray) == false) {
+        if (org.apache.commons.lang3.ArrayUtils
+                .isSameLength(classArray, toClassArray) == false) {
             return false;
         }
         if (classArray == null) {
-            classArray = ArrayUtils.EMPTY_CLASS_ARRAY;
+            classArray = org.apache.commons.lang3.ArrayUtils.EMPTY_CLASS_ARRAY;
         }
         if (toClassArray == null) {
-            toClassArray = ArrayUtils.EMPTY_CLASS_ARRAY;
+            toClassArray = org.apache.commons.lang3.ArrayUtils.EMPTY_CLASS_ARRAY;
         }
         for (int i = 0; i < classArray.length; i++) {
             if (isAssignable(classArray[i], toClassArray[i], autoboxing) == false) {
@@ -521,7 +523,7 @@ public class ClassUtils {
      * @return <code>true</code> if assignment possible
      */
     public static boolean isAssignable(Class<?> cls, Class<?> toClass) {
-        return isAssignable(cls, toClass, SystemUtils.isJavaVersionAtLeast(1.5f));
+        return isAssignable(cls, toClass, org.apache.commons.lang3.SystemUtils.isJavaVersionAtLeast(1.5f));
     }
 
     /**
@@ -858,7 +860,7 @@ public class ClassUtils {
         }
 
         throw new NoSuchMethodException("Can't find a public method for " +
-                methodName + " " + ArrayUtils.toString(parameterTypes));
+                methodName + " " + org.apache.commons.lang3.ArrayUtils.toString(parameterTypes));
     }
 
     // ----------------------------------------------------------------------
@@ -869,7 +871,7 @@ public class ClassUtils {
      * @return the converted name
      */
     private static String toCanonicalName(String className) {
-        className = StringUtils.deleteWhitespace(className);
+        className = org.apache.commons.lang3.StringUtils.deleteWhitespace(className);
         if (className == null) {
             throw new NullPointerException("className must not be null.");
         } else if (className.endsWith("[]")) {
@@ -903,7 +905,7 @@ public class ClassUtils {
         if (array == null) {
             return null;
         } else if (array.length == 0) {
-            return ArrayUtils.EMPTY_CLASS_ARRAY;
+            return org.apache.commons.lang3.ArrayUtils.EMPTY_CLASS_ARRAY;
         }
         Class<?>[] classes = new Class[array.length];
         for (int i = 0; i < array.length; i++) {
@@ -939,7 +941,7 @@ public class ClassUtils {
      */
     public static String getShortCanonicalName(Class<?> cls) {
         if (cls == null) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
         return getShortCanonicalName(cls.getName());
     }
@@ -983,7 +985,7 @@ public class ClassUtils {
      */
     public static String getPackageCanonicalName(Class<?> cls) {
         if (cls == null) {
-            return StringUtils.EMPTY;
+            return org.apache.commons.lang3.StringUtils.EMPTY;
         }
         return getPackageCanonicalName(cls.getName());
     }
@@ -1019,7 +1021,7 @@ public class ClassUtils {
      * @since 2.4
      */
     private static String getCanonicalName(String className) {
-        className = StringUtils.deleteWhitespace(className);
+        className = org.apache.commons.lang3.StringUtils.deleteWhitespace(className);
         if (className == null) {
             return null;
         } else {
