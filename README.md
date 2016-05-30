@@ -11,20 +11,20 @@ The NPE Dataset contains 17 bugs from 6 Apache projects.
 
 | Project                    | Bug ID          | SVN ID  |
 |----------------------------|-----------------|---------|
-| Apache Commons Collections | COLLECTIONS-331 | 1079587 |
-| Apache Commons Collections | COLLECTIONS-360 | 1076034 |
-| Apache Commons Lang        | LANG-304        | 489749  |
-| Apache Commons Lang        | LANG-587        | 907102  |
-| Apache Commons Lang        | LANG-703        | 1142381 |
-| Apache Commons Math        | MATH-290        | 807923  |
-| Apache Commons Math        | MATH-305        | 885027  |
-| Apache Commons Math        | MATH-369        | 940565  |
-| Apache Commons Math        | MATH-988a       | 1488866 |
-| Apache Commons Math        | MATH-988b       | 1488866 |
-| Apache Commons Math        | MATH-1115       | 1590254 |
-| Apache Commons Math        | MATH-1117       | 1590251 |
-| Apache Felix               | FELIX-4960      | 1691137 |
-| Apache PDFBox              | PDFBOX-2812     | 1681643 |
-| Apache PDFBox              | PDFBOX-2965     | 1701905 |
-| Apache PDFBox              | PDFBOX-2995     | 1705415 |
-| Apache Sling               | SLING-4982      | 1700424 |
+| Apache Commons Collections | COLLECTIONS-331 | [1079587](http://svn.apache.org/viewvc?view=revision&revision=1079587) |
+| Apache Commons Collections | COLLECTIONS-360 | [1076034](http://svn.apache.org/viewvc?view=revision&revision=1076034) |
+| Apache Commons Lang        | LANG-304        | [489749](http://svn.apache.org/viewvc?view=revision&revision=489749)   |
+| Apache Commons Lang        | LANG-587        | [907102](http://svn.apache.org/viewvc?view=revision&revision=907102)   |
+| Apache Commons Lang        | LANG-703        | [1142381](http://svn.apache.org/viewvc?view=revision&revision=1142381) |
+| Apache Commons Math        | MATH-290        | [807923](http://svn.apache.org/viewvc?view=revision&revision=807923)   |
+| Apache Commons Math        | MATH-305        | [885027](http://svn.apache.org/viewvc?view=revision&revision=885027)   |
+| Apache Commons Math        | MATH-369        | [940565](http://svn.apache.org/viewvc?view=revision&revision=940565)   |
+| Apache Commons Math        | MATH-988a       | [1488866](http://svn.apache.org/viewvc?view=revision&revision=1488866) |
+| Apache Commons Math        | MATH-988b       | [1488866](http://svn.apache.org/viewvc?view=revision&revision=1488866) |
+| Apache Commons Math        | MATH-1115       | [1590254](http://svn.apache.org/viewvc?view=revision&revision=1590254) |
+| Apache Commons Math        | MATH-1117       | [1590251](http://svn.apache.org/viewvc?view=revision&revision=1590251) |
+| Apache Felix               | FELIX-4960      | [1691137](http://svn.apache.org/viewvc?view=revision&revision=1691137) |
+| Apache PDFBox              | PDFBOX-2812     | [1681643](http://svn.apache.org/viewvc?view=revision&revision=1681643) |
+| Apache PDFBox              | PDFBOX-2965     | [1701905](http://svn.apache.org/viewvc?view=revision&revision=1701905) |
+| Apache PDFBox              | PDFBOX-2995     | [1705415](http://svn.apache.org/viewvc?view=revision&revision=1705415) |
+| Apache Sling               | SLING-4982      | [1700424](http://svn.apache.org/viewvc?view=revision&revision=1700424) |
