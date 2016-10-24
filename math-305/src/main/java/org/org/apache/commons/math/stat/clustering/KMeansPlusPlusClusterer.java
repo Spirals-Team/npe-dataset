@@ -29,7 +29,7 @@ import java.util.Random;
  * @version $Revision: 811685 $ $Date: 2009-09-05 19:36:48 +0200 (sam., 05 sept. 2009) $
  * @since 2.0
  */
-public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
+public class KMeansPlusPlusClusterer<T extends org.apache.commons.math.stat.clustering.Clusterable<T>> {
 
     /** Random generator for choosing initial centers. */
     private final Random random;
@@ -50,23 +50,23 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      *     for.  If negative, no maximum will be used
      * @return a list of clusters containing the points
      */
-    public List<Cluster<T>> cluster(final Collection<T> points,
+    public List<org.apache.commons.math.stat.clustering.Cluster<T>> cluster(final Collection<T> points,
                                     final int k, final int maxIterations) {
         // create the initial clusters
-        List<Cluster<T>> clusters = chooseInitialCenters(points, k, random);
+        List<org.apache.commons.math.stat.clustering.Cluster<T>> clusters = chooseInitialCenters(points, k, random);
         assignPointsToClusters(clusters, points);
 
         // iterate through updating the centers until we're done
         final int max = (maxIterations < 0) ? Integer.MAX_VALUE : maxIterations;
         for (int count = 0; count < max; count++) {
             boolean clusteringChanged = false;
-            List<Cluster<T>> newClusters = new ArrayList<Cluster<T>>();
+            List<org.apache.commons.math.stat.clustering.Cluster<T>> newClusters = new ArrayList<org.apache.commons.math.stat.clustering.Cluster<T>>();
             for (final Cluster<T> cluster : clusters) {
                 final T newCenter = cluster.getCenter().centroidOf(cluster.getPoints());
                 if (!newCenter.equals(cluster.getCenter())) {
                     clusteringChanged = true;
                 }
-                newClusters.add(new Cluster<T>(newCenter));
+                newClusters.add(new org.apache.commons.math.stat.clustering.Cluster<T>(newCenter));
             }
             if (!clusteringChanged) {
                 return clusters;
@@ -84,10 +84,10 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param clusters the {@link Cluster}s to add the points to
      * @param points the points to add to the given {@link Cluster}s
      */
-    private static <T extends Clusterable<T>> void
-        assignPointsToClusters(final Collection<Cluster<T>> clusters, final Collection<T> points) {
+    private static <T extends org.apache.commons.math.stat.clustering.Clusterable<T>> void
+            assignPointsToClusters(final Collection<org.apache.commons.math.stat.clustering.Cluster<T>> clusters, final Collection<T> points) {
         for (final T p : points) {
-            Cluster<T> cluster = getNearestCluster(clusters, p);
+            org.apache.commons.math.stat.clustering.Cluster<T> cluster = getNearestCluster(clusters, p);
             cluster.addPoint(p);
         }
     }
@@ -101,15 +101,15 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param random random generator to use
      * @return the initial centers
      */
-    private static <T extends Clusterable<T>> List<Cluster<T>>
+    private static <T extends org.apache.commons.math.stat.clustering.Clusterable<T>> List<Cluster<T>>
         chooseInitialCenters(final Collection<T> points, final int k, final Random random) {
 
         final List<T> pointSet = new ArrayList<T>(points);
-        final List<Cluster<T>> resultSet = new ArrayList<Cluster<T>>();
+        final List<org.apache.commons.math.stat.clustering.Cluster<T>> resultSet = new ArrayList<Cluster<T>>();
 
         // Choose one center uniformly at random from among the data points.
         final T firstPoint = pointSet.remove(random.nextInt(pointSet.size()));
-        resultSet.add(new Cluster<T>(firstPoint));
+        resultSet.add(new org.apache.commons.math.stat.clustering.Cluster<T>(firstPoint));
 
         final double[] dx2 = new double[pointSet.size()];
         while (resultSet.size() < k) {
@@ -118,7 +118,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
             int sum = 0;
             for (int i = 0; i < pointSet.size(); i++) {
                 final T p = pointSet.get(i);
-                final Cluster<T> nearest = getNearestCluster(resultSet, p);
+                final org.apache.commons.math.stat.clustering.Cluster<T> nearest = getNearestCluster(resultSet, p);
                 final double d = p.distanceFrom(nearest.getCenter());
                 sum += d * d;
                 dx2[i] = sum;
@@ -130,7 +130,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
             for (int i = 0 ; i < dx2.length; i++) {
                 if (dx2[i] >= r) {
                     final T p = pointSet.remove(i);
-                    resultSet.add(new Cluster<T>(p));
+                    resultSet.add(new org.apache.commons.math.stat.clustering.Cluster<T>(p));
                     break;
                 }
             }
@@ -148,11 +148,11 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param point the point to find the nearest {@link Cluster} for
      * @return the nearest {@link Cluster} to the given point
      */
-    private static <T extends Clusterable<T>> Cluster<T>
-        getNearestCluster(final Collection<Cluster<T>> clusters, final T point) {
+    private static <T extends org.apache.commons.math.stat.clustering.Clusterable<T>> Cluster<T>
+        getNearestCluster(final Collection<org.apache.commons.math.stat.clustering.Cluster<T>> clusters, final T point) {
         double minDistance = Double.MAX_VALUE;
-        Cluster<T> minCluster = null;
-        for (final Cluster<T> c : clusters) {
+        org.apache.commons.math.stat.clustering.Cluster<T> minCluster = null;
+        for (final org.apache.commons.math.stat.clustering.Cluster<T> c : clusters) {
             final double distance = point.distanceFrom(c.getCenter());
             if (distance < minDistance) {
                 minDistance = distance;

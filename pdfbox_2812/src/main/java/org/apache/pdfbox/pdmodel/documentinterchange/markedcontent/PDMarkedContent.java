@@ -97,7 +97,8 @@ public class PDMarkedContent
      */
     public int getMCID()
     {
-        return this.getProperties() == null ? null :
+        // bug fix
+        return this.getProperties() == null ? -1 :
             this.getProperties().getInt(COSName.MCID);
     }
 

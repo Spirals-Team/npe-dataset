@@ -29,7 +29,6 @@
 
     <artifactId>org.apache.sling.security</artifactId>
     <version>1.0.15-SNAPSHOT</version>
-    <packaging>bundle</packaging>
 
     <name>Apache Sling Security</name>
     <description>
@@ -118,6 +117,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <version>4.11</version>
         </dependency>
         <dependency>
             <groupId>org.jmock</groupId>
