@@ -1,7 +1,23 @@
-# NPE Dataset
+# NpeFix Dataset
 
-The NPE Dataset contains 17 bugs from 6 Apache projects.
+The dataset contains 17 null pointer exception bugs from 6 Apache projects.
 
+If you use this benchmark, please cite:
+
+Thomas Durieux, Benoit Cornu, Lionel Seinturier and Martin Monperrus, "[Dynamic Patch Generation for Null Pointer Exceptions Using Metaprogramming](https://hal.archives-ouvertes.fr/hal-01419861/document)", In IEEE International Conference on Software Analysis, Evolution and Reengineering, 2017.
+Bibtex Entry:
+
+    @inproceedings{durieuxNpeFix,
+        title = {{Dynamic Patch Generation for Null Pointer Exceptions Using Metaprogramming}},
+        author = {Durieux, Thomas and Cornu, Benoit and Seinturier, Lionel and Monperrus, Martin},
+        url = {https://hal.archives-ouvertes.fr/hal-01419861/document},
+        booktitle = {{IEEE International Conference on Software Analysis, Evolution and Reengineering}},
+        year = {2017},
+    }
+
+
+
+Projects:
 * [Apache Commons Collections](https://commons.apache.org/proper/commons-collections/)
 * [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/)
 * [Apache Commons Math](https://commons.apache.org/proper/commons-math/) 
